@@ -22,25 +22,7 @@ Dự án gồm hai ứng dụng Spring Boot: **Producer**  và **Consumer** , s�
 ##  Hướng dẫn triển khai 
 
 
-### 1. Khởi động Kafka & Zookeeper bằng Docker 
-
-
-
-```bash
-cd docker-kafka-zookeeper
-docker-compose up -d
-```
-
-
-> Kafka sẽ chạy tại `localhost:9092`
-
-
-
----
-
-
-
-### 2. Cấu hình ứng dụng 
+### 1. Cấu hình ứng dụng 
 
 `producer-app/src/main/resources/application.yml`
 
@@ -80,7 +62,7 @@ spring:
 
 
 
-### 3. Chạy ứng dụng 
+### 2. Chạy ứng dụng 
 
  
 - Chạy **Producer** :
@@ -108,16 +90,16 @@ mvn spring-boot:run
 
 
 
-### 4. Kiểm tra hoạt động với PowerShell 
+### 3. Kiểm tra hoạt động với PowerShell 
 
 
-#### 4.1. Gửi thông điệp từ Producer 
+#### 3.1. Gửi thông điệp từ Producer 
 
 
 ![Kết quả](pic/1.png) 
 
 
-#### 4.2. Lấy thông điệp từ Consumer 
+#### 3.2. Lấy thông điệp từ Consumer 
 
 
 
@@ -126,7 +108,7 @@ Invoke-RestMethod http://localhost:8081/users
 ```
 
 
-#### 4.3. Kết quả 
+#### 3.3. Kết quả 
 
 
 Thông điệp sẽ được gửi từ Producer → Kafka → Consumer. Kết quả xử lý được hiển thị như sau:
